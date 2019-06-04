@@ -19,6 +19,8 @@ namespace Inventory_Management_System
     {
         UserData us;
         TeacherData tc;
+        string useraddress = "C:/Users/user/OneDrive/Work and Jobs ᜵ ᜄᜏ ᜀᜆ᜔ ᜋᜅ ᜄᜏᜁᜈ᜔/Logiclude/RSJ-Enterprises-Inventory-Management-System/Confidential/RSJEIMS/User/";
+        string adminaddress = "C:/Users/user/OneDrive/Work and Jobs ᜵ ᜄᜏ ᜀᜆ᜔ ᜋᜅ ᜄᜏᜁᜈ᜔/Logiclude/RSJ-Enterprises-Inventory-Management-System/Confidential/RSJEIMS/Admin/";
 
         public WelcomeO()
         {
@@ -29,7 +31,7 @@ namespace Inventory_Management_System
             try
             {
 
-                FileStream fs = new FileStream("c:/Confidential/GESMIS/User/" + "USER", FileMode.OpenOrCreate, FileAccess.ReadWrite);
+                FileStream fs = new FileStream(useraddress + "USER", FileMode.OpenOrCreate, FileAccess.ReadWrite);
                 BinaryFormatter b = new BinaryFormatter();           
                 us = (UserData)b.Deserialize(fs);
                 fs.Close();
@@ -46,7 +48,7 @@ namespace Inventory_Management_System
             try
             {
 
-                FileStream fs1 = new FileStream("c:/Confidential/GESMIS/Teacher/" + us.username, FileMode.OpenOrCreate, FileAccess.ReadWrite);
+                FileStream fs1 = new FileStream(adminaddress + us.username, FileMode.OpenOrCreate, FileAccess.ReadWrite);
                 BinaryFormatter b1 = new BinaryFormatter();
                 tc = (TeacherData)b1.Deserialize(fs1);
                 fs1.Close();
@@ -135,7 +137,7 @@ namespace Inventory_Management_System
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            ViewRecordsStudent tc = new ViewRecordsStudent();
+            ViewRecordsProduct tc = new ViewRecordsProduct();
             tc.Show();
         }
 

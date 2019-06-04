@@ -112,11 +112,11 @@
     <Compile Include="ProductsData.cs" />
     <Compile Include="TeacherData.cs" />
     <Compile Include="UserData.cs" />
-    <Compile Include="ViewRecordsStudent.cs">
+    <Compile Include="ViewRecordsProduct.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ViewRecordsStudent.Designer.cs">
-      <DependentUpon>ViewRecordsStudent.cs</DependentUpon>
+    <Compile Include="ViewRecordsProduct.Designer.cs">
+      <DependentUpon>ViewRecordsProduct.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewRecordsTeacher.cs">
       <SubType>Form</SubType>
@@ -167,8 +167,8 @@
     <EmbeddedResource Include="Products.resx">
       <DependentUpon>Products.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ViewRecordsStudent.resx">
-      <DependentUpon>ViewRecordsStudent.cs</DependentUpon>
+    <EmbeddedResource Include="ViewRecordsProduct.resx">
+      <DependentUpon>ViewRecordsProduct.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewRecordsTeacher.resx">
       <DependentUpon>ViewRecordsTeacher.cs</DependentUpon>

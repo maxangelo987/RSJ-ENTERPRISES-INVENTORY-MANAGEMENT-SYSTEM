@@ -123,7 +123,7 @@ namespace Inventory_Management_System
 
         private void pictureBox5_Click(object sender, EventArgs e)
         {
-            ViewRecordsStudent tc = new ViewRecordsStudent();
+            ViewRecordsProduct tc = new ViewRecordsProduct();
             tc.Show();
         }
     }

@@ -14,10 +14,12 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 namespace Inventory_Management_System
 {
-    public partial class ViewRecordsStudent : Form
+    public partial class ViewRecordsProduct : Form
     {
+        string productaddress = "C:/Users/user/OneDrive/Work and Jobs ᜵ ᜄᜏ ᜀᜆ᜔ ᜋᜅ ᜄᜏᜁᜈ᜔/Logiclude/RSJ-Enterprises-Inventory-Management-System/Confidential/RSJEIMS/Product/";
+        string useraddress = "C:/Users/user/OneDrive/Work and Jobs ᜵ ᜄᜏ ᜀᜆ᜔ ᜋᜅ ᜄᜏᜁᜈ᜔/Logiclude/RSJ-Enterprises-Inventory-Management-System/Confidential/RSJEIMS/User/";
 
-        public ViewRecordsStudent()
+        public ViewRecordsProduct()
         {
             InitializeComponent();
         }
@@ -43,7 +45,7 @@ namespace Inventory_Management_System
            
             try
             {
-                    FileStream fs = new FileStream("c:/Confidential/GESMIS/User/" + "USER", FileMode.OpenOrCreate, FileAccess.ReadWrite);
+                    FileStream fs = new FileStream(useraddress + "USER", FileMode.OpenOrCreate, FileAccess.ReadWrite);
                     BinaryFormatter b = new BinaryFormatter();
                     ut = (UserData)b.Deserialize(fs);
                     fs.Close();
@@ -63,14 +65,14 @@ namespace Inventory_Management_System
             {
                 if (s.Trim() != "") 
                 {
-                    if (File.Exists("c:/Confidential/GESMIS/Student/" + s))
+                    if (File.Exists(productaddress + s))
                     {
-                        FileStream fs = new FileStream("c:/Confidential/GESMIS/Student/" + s, FileMode.Open, FileAccess.Read);
+                        FileStream fs = new FileStream(productaddress + s, FileMode.Open, FileAccess.Read);
                         BinaryFormatter b = new BinaryFormatter();
                         st = (ProductsData)b.Deserialize(fs);
                         fs.Close();
 
-                        string[] row0 = { st.barcode, st.item, st.description, st.unit, st.quantity.ToString(), st.unitprice.ToString(), st.retailprice.ToString()};
+                        string[] row0 = { st.barcode, st.itemdescription, st.unit, st.quantity.ToString(), st.unitprice.ToString(), st.retailprice.ToString()};
                         dataGridView1.Rows.Add(row0);
                     }
                 }

@@ -18,7 +18,12 @@ namespace Inventory_Management_System
     {
 
         UserData us;
-        string productaddress = "C:/Confidential/GESMIS/Student/";
+        string productaddress = "C:/Users/user/OneDrive/Work and Jobs ᜵ ᜄᜏ ᜀᜆ᜔ ᜋᜅ ᜄᜏᜁᜈ᜔/Logiclude/RSJ-Enterprises-Inventory-Management-System/Confidential/RSJEIMS/Product/";
+        string useraddress = "C:/Users/user/OneDrive/Work and Jobs ᜵ ᜄᜏ ᜀᜆ᜔ ᜋᜅ ᜄᜏᜁᜈ᜔/Logiclude/RSJ-Enterprises-Inventory-Management-System/Confidential/RSJEIMS/User/";
+
+
+
+
 
         public Products()
         {
@@ -60,19 +65,19 @@ namespace Inventory_Management_System
             ut = new UserData();
     
 
-            if (!Directory.Exists("c:/Confidential/GESMIS/User/"))
+            if (!Directory.Exists(useraddress))
             {
-                Directory.CreateDirectory("c:/Confidential/GESMIS/User/");
+                Directory.CreateDirectory(useraddress);
             }
 
             try
             {
-                FileStream fs3 = new FileStream("c:/Confidential/GESMIS/User/" + "USER", FileMode.OpenOrCreate, FileAccess.ReadWrite);
+                FileStream fs3 = new FileStream(useraddress + "USER", FileMode.OpenOrCreate, FileAccess.ReadWrite);
                 BinaryFormatter b3 = new BinaryFormatter();
                 ut = (UserData)b3.Deserialize(fs3);
                 pt.barcode = BarcodeBox.Text;
-                pt.item = ItemBox.Text;
-                pt.description = DescriptionBox.Text;
+                pt.itemdescription = ItemDescriptionBox.Text;
+               
                 pt.unit = UnitBox.Text;
                 pt.quantity = long.Parse(QuantityBox.Text);
                 pt.unitprice = double.Parse(UnitPriceBox.Text);
@@ -115,7 +120,7 @@ namespace Inventory_Management_System
                     fs.Close();
                     MessageBox.Show("Product Has Been Added Successfully,Thank You");
 
-                    FileStream fs2 = new FileStream("c:/Confidential/GESMIS/User/" + "USER", FileMode.OpenOrCreate, FileAccess.ReadWrite);
+                    FileStream fs2 = new FileStream(useraddress + "USER", FileMode.OpenOrCreate, FileAccess.ReadWrite);
                     BinaryFormatter b2 = new BinaryFormatter();
                     b2.Serialize(fs2, ut);
                     fs2.Close();
@@ -144,14 +149,11 @@ namespace Inventory_Management_System
         private void button6_Click(object sender, EventArgs e)
         {
             try
-            {
-                
+            {  
                     File.Delete(productaddress +(BarcodeBox3.Text) );
-                    MessageBox.Show(ItemBox3.Text + " Has Been Deleted From Our Database..!!!");
+                    MessageBox.Show(ItemDescriptionBox3.Text + " Has Been Deleted From Our Database..!!!");
                     BarcodeBox3.Clear();
-                    ItemBox3.Clear();
-                    DescriptionBox3.Clear();
-              
+                    ItemDescriptionBox3.Clear();
 
             }
             catch(Exception ex)
@@ -165,8 +167,7 @@ namespace Inventory_Management_System
         private void button2_Click_1(object sender, EventArgs e)
         {
             BarcodeBox.Clear();
-            ItemBox.Clear();
-            DescriptionBox.Clear();
+            ItemDescriptionBox.Clear();
             UnitBox.Clear();
             QuantityBox.Clear();
             UnitPriceBox.Clear();
@@ -177,8 +178,7 @@ namespace Inventory_Management_System
         {
             pt = new ProductsData();
             pt.barcode = BarcodeBox2.Text;
-            pt.item = ItemBox2.Text;
-            pt.description = DescriptionBox2.Text;
+            pt.itemdescription = ItemDescriptionBox2.Text;
             pt.unit = UnitBox2.Text;
             pt.quantity = long.Parse(QuantityBox2.Text);
             pt.unitprice = double.Parse(UnitPriceBox2.Text);
@@ -208,8 +208,7 @@ namespace Inventory_Management_System
         private void button3_Click(object sender, EventArgs e)
         {
             BarcodeBox2.Clear();
-            ItemBox2.Clear();
-            DescriptionBox2.Clear();
+            ItemDescriptionBox2.Clear();
             UnitBox2.Clear();
             QuantityBox2.Clear();
             UnitPriceBox2.Clear();
@@ -233,8 +232,7 @@ namespace Inventory_Management_System
                     BinaryFormatter b = new BinaryFormatter();
                     pt = (ProductsData)b.Deserialize(fs);
                     fs.Close();
-                    ItemBox2.Text = pt.item;
-                    DescriptionBox2.Text = pt.description;
+                    ItemDescriptionBox2.Text = pt.itemdescription;                  
                     UnitBox2.Text = pt.unit;
 
               
@@ -242,7 +240,7 @@ namespace Inventory_Management_System
                     UnitPriceBox2.Text = pt.unitprice.ToString();
                     RetailPriceBox2.Text = pt.retailprice.ToString();
 
-                    FileStream fs2 = new FileStream("c:/Confidential/GESMIS/User/" + "USER", FileMode.OpenOrCreate, FileAccess.ReadWrite);
+                    FileStream fs2 = new FileStream(useraddress + "USER", FileMode.OpenOrCreate, FileAccess.ReadWrite);
                     BinaryFormatter b2 = new BinaryFormatter();
                     ut = (UserData)b2.Deserialize(fs2);
                     fs2.Close();
@@ -283,16 +281,12 @@ namespace Inventory_Management_System
         {
             pt = new ProductsData();
             try
-            {
-                
-
+            {              
                     FileStream fs = new FileStream(productaddress + BarcodeBox3.Text, FileMode.OpenOrCreate, FileAccess.ReadWrite);
                     BinaryFormatter b = new BinaryFormatter();
                     pt = (ProductsData)b.Deserialize(fs);
                     fs.Close();
-                    ItemBox3.Text = pt.item;
-                    DescriptionBox3.Text = pt.description;
-    
+                    ItemDescriptionBox3.Text = pt.itemdescription;    
             }
             catch (Exception exe)
             {

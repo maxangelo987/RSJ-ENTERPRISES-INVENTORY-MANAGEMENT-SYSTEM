@@ -21,6 +21,11 @@ namespace Inventory_Management_System
         TeacherData tc;
         UserData us;
         string[] collections = new string[200];
+        string productaddress = "C:/Users/user/OneDrive/Work and Jobs ᜵ ᜄᜏ ᜀᜆ᜔ ᜋᜅ ᜄᜏᜁᜈ᜔/Logiclude/RSJ-Enterprises-Inventory-Management-System/Confidential/RSJEIMS/Product/";
+        string useraddress = "C:/Users/user/OneDrive/Work and Jobs ᜵ ᜄᜏ ᜀᜆ᜔ ᜋᜅ ᜄᜏᜁᜈ᜔/Logiclude/RSJ-Enterprises-Inventory-Management-System/Confidential/RSJEIMS/User/";
+        string adminaddress = "C:/Users/user/OneDrive/Work and Jobs ᜵ ᜄᜏ ᜀᜆ᜔ ᜋᜅ ᜄᜏᜁᜈ᜔/Logiclude/RSJ-Enterprises-Inventory-Management-System/Confidential/RSJEIMS/Admin/";
+
+
 
         public LoginPanel()
         {
@@ -45,17 +50,17 @@ namespace Inventory_Management_System
             us.username = textBox3.Text;
 
 
-            if (File.Exists("C:/Confidential/GESMIS/User/"+"USER"))
+            if (File.Exists(useraddress + "USER"))
             {
                
             }
 
             else
             {
-                Directory.CreateDirectory("c:/Confidential/GESMIS/User/");
+                Directory.CreateDirectory(useraddress);
                 try
                 {
-                    FileStream fs = new FileStream("c:/Confidential/GESMIS/User/" + "USER", FileMode.OpenOrCreate, FileAccess.ReadWrite);
+                    FileStream fs = new FileStream(useraddress + "USER", FileMode.OpenOrCreate, FileAccess.ReadWrite);
                     BinaryFormatter b = new BinaryFormatter();
                     b.Serialize(fs, us);
                     fs.Close();
@@ -76,7 +81,7 @@ namespace Inventory_Management_System
         {
             
             
-            if (!File.Exists("C:/Confidential/GESMIS/Teacher/" + textBox3.Text))
+            if (!File.Exists(adminaddress + textBox3.Text))
             {
               MessageBox.Show("Invalid Username/Password");
             }
@@ -84,7 +89,7 @@ namespace Inventory_Management_System
             else
             {
 
-                    FileStream fs = new FileStream("C:/Confidential/GESMIS/Teacher/" + textBox3.Text, FileMode.OpenOrCreate, FileAccess.ReadWrite);
+                    FileStream fs = new FileStream(adminaddress + textBox3.Text, FileMode.OpenOrCreate, FileAccess.ReadWrite);
                     BinaryFormatter b = new BinaryFormatter();
                     tc = (TeacherData)b.Deserialize(fs);
                     fs.Close();
@@ -429,5 +434,9 @@ namespace Inventory_Management_System
             }
         }
 
+        private void LoginPanel_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

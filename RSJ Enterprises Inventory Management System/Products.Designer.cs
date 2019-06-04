@@ -33,7 +33,7 @@
             this.AddPage = new System.Windows.Forms.TabPage();
             this.UnitPriceBox = new System.Windows.Forms.TextBox();
             this.label_unitprice = new System.Windows.Forms.Label();
-            this.ItemBox = new System.Windows.Forms.TextBox();
+            this.ItemDescriptionBox = new System.Windows.Forms.TextBox();
             this.label_item = new System.Windows.Forms.Label();
             this.label_retailprice = new System.Windows.Forms.Label();
             this.RetailPriceBox = new System.Windows.Forms.TextBox();
@@ -41,38 +41,32 @@
             this.label_quantity = new System.Windows.Forms.Label();
             this.ClearButton = new System.Windows.Forms.Button();
             this.UnitBox = new System.Windows.Forms.TextBox();
-            this.DescriptionBox = new System.Windows.Forms.TextBox();
             this.BarcodeBox = new System.Windows.Forms.TextBox();
             this.AddButton = new System.Windows.Forms.Button();
             this.label_unit = new System.Windows.Forms.Label();
             this.label_price = new System.Windows.Forms.Label();
-            this.label_description = new System.Windows.Forms.Label();
             this.label_barcode = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.UnitPriceBox2 = new System.Windows.Forms.TextBox();
             this.label_unitprice2 = new System.Windows.Forms.Label();
-            this.ItemBox2 = new System.Windows.Forms.TextBox();
+            this.ItemDescriptionBox2 = new System.Windows.Forms.TextBox();
             this.label_item2 = new System.Windows.Forms.Label();
             this.label_retailprice2 = new System.Windows.Forms.Label();
             this.RetailPriceBox2 = new System.Windows.Forms.TextBox();
             this.QuantityBox2 = new System.Windows.Forms.TextBox();
             this.label_quantity2 = new System.Windows.Forms.Label();
             this.UnitBox2 = new System.Windows.Forms.TextBox();
-            this.DescriptionBox2 = new System.Windows.Forms.TextBox();
             this.BarcodeBox2 = new System.Windows.Forms.TextBox();
             this.label_unit2 = new System.Windows.Forms.Label();
             this.label_price2 = new System.Windows.Forms.Label();
-            this.label_description2 = new System.Windows.Forms.Label();
             this.label_barcode2 = new System.Windows.Forms.Label();
             this.SearchButton = new System.Windows.Forms.Button();
             this.ClearButton2 = new System.Windows.Forms.Button();
             this.UpdateButton = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.ItemBox3 = new System.Windows.Forms.TextBox();
+            this.ItemDescriptionBox3 = new System.Windows.Forms.TextBox();
             this.label_item3 = new System.Windows.Forms.Label();
-            this.DescriptionBox3 = new System.Windows.Forms.TextBox();
             this.BarcodeBox3 = new System.Windows.Forms.TextBox();
-            this.label_description3 = new System.Windows.Forms.Label();
             this.label_barcode3 = new System.Windows.Forms.Label();
             this.DeleteButton = new System.Windows.Forms.Button();
             this.SearchButton2 = new System.Windows.Forms.Button();
@@ -104,7 +98,7 @@
             this.AddPage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.AddPage.Controls.Add(this.UnitPriceBox);
             this.AddPage.Controls.Add(this.label_unitprice);
-            this.AddPage.Controls.Add(this.ItemBox);
+            this.AddPage.Controls.Add(this.ItemDescriptionBox);
             this.AddPage.Controls.Add(this.label_item);
             this.AddPage.Controls.Add(this.label_retailprice);
             this.AddPage.Controls.Add(this.RetailPriceBox);
@@ -112,12 +106,10 @@
             this.AddPage.Controls.Add(this.label_quantity);
             this.AddPage.Controls.Add(this.ClearButton);
             this.AddPage.Controls.Add(this.UnitBox);
-            this.AddPage.Controls.Add(this.DescriptionBox);
             this.AddPage.Controls.Add(this.BarcodeBox);
             this.AddPage.Controls.Add(this.AddButton);
             this.AddPage.Controls.Add(this.label_unit);
             this.AddPage.Controls.Add(this.label_price);
-            this.AddPage.Controls.Add(this.label_description);
             this.AddPage.Controls.Add(this.label_barcode);
             this.AddPage.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.AddPage.Location = new System.Drawing.Point(4, 25);
@@ -151,14 +143,14 @@
             this.label_unitprice.Text = "Unit price";
             this.label_unitprice.Click += new System.EventHandler(this.label_unitprice_Click);
             // 
-            // ItemBox
+            // ItemDescriptionBox
             // 
-            this.ItemBox.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.ItemBox.Location = new System.Drawing.Point(185, 78);
-            this.ItemBox.Multiline = true;
-            this.ItemBox.Name = "ItemBox";
-            this.ItemBox.Size = new System.Drawing.Size(182, 31);
-            this.ItemBox.TabIndex = 34;
+            this.ItemDescriptionBox.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.ItemDescriptionBox.Location = new System.Drawing.Point(185, 94);
+            this.ItemDescriptionBox.Multiline = true;
+            this.ItemDescriptionBox.Name = "ItemDescriptionBox";
+            this.ItemDescriptionBox.Size = new System.Drawing.Size(182, 31);
+            this.ItemDescriptionBox.TabIndex = 34;
             // 
             // label_item
             // 
@@ -166,11 +158,11 @@
             this.label_item.BackColor = System.Drawing.Color.Transparent;
             this.label_item.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_item.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label_item.Location = new System.Drawing.Point(50, 82);
+            this.label_item.Location = new System.Drawing.Point(50, 98);
             this.label_item.Name = "label_item";
-            this.label_item.Size = new System.Drawing.Size(41, 20);
+            this.label_item.Size = new System.Drawing.Size(125, 20);
             this.label_item.TabIndex = 33;
-            this.label_item.Text = "Item";
+            this.label_item.Text = "Item Description";
             // 
             // label_retailprice
             // 
@@ -235,20 +227,11 @@
             // UnitBox
             // 
             this.UnitBox.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.UnitBox.Location = new System.Drawing.Point(185, 166);
+            this.UnitBox.Location = new System.Drawing.Point(185, 154);
             this.UnitBox.Multiline = true;
             this.UnitBox.Name = "UnitBox";
             this.UnitBox.Size = new System.Drawing.Size(182, 31);
             this.UnitBox.TabIndex = 18;
-            // 
-            // DescriptionBox
-            // 
-            this.DescriptionBox.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.DescriptionBox.Location = new System.Drawing.Point(185, 124);
-            this.DescriptionBox.Multiline = true;
-            this.DescriptionBox.Name = "DescriptionBox";
-            this.DescriptionBox.Size = new System.Drawing.Size(182, 30);
-            this.DescriptionBox.TabIndex = 11;
             // 
             // BarcodeBox
             // 
@@ -279,7 +262,7 @@
             this.label_unit.BackColor = System.Drawing.Color.Transparent;
             this.label_unit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_unit.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label_unit.Location = new System.Drawing.Point(50, 172);
+            this.label_unit.Location = new System.Drawing.Point(50, 160);
             this.label_unit.Name = "label_unit";
             this.label_unit.Size = new System.Drawing.Size(38, 20);
             this.label_unit.TabIndex = 4;
@@ -296,18 +279,6 @@
             this.label_price.Size = new System.Drawing.Size(44, 20);
             this.label_price.TabIndex = 3;
             this.label_price.Text = "Price";
-            // 
-            // label_description
-            // 
-            this.label_description.AutoSize = true;
-            this.label_description.BackColor = System.Drawing.Color.Transparent;
-            this.label_description.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_description.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label_description.Location = new System.Drawing.Point(50, 129);
-            this.label_description.Name = "label_description";
-            this.label_description.Size = new System.Drawing.Size(89, 20);
-            this.label_description.TabIndex = 1;
-            this.label_description.Text = "Description";
             // 
             // label_barcode
             // 
@@ -327,18 +298,16 @@
             this.tabPage2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.tabPage2.Controls.Add(this.UnitPriceBox2);
             this.tabPage2.Controls.Add(this.label_unitprice2);
-            this.tabPage2.Controls.Add(this.ItemBox2);
+            this.tabPage2.Controls.Add(this.ItemDescriptionBox2);
             this.tabPage2.Controls.Add(this.label_item2);
             this.tabPage2.Controls.Add(this.label_retailprice2);
             this.tabPage2.Controls.Add(this.RetailPriceBox2);
             this.tabPage2.Controls.Add(this.QuantityBox2);
             this.tabPage2.Controls.Add(this.label_quantity2);
             this.tabPage2.Controls.Add(this.UnitBox2);
-            this.tabPage2.Controls.Add(this.DescriptionBox2);
             this.tabPage2.Controls.Add(this.BarcodeBox2);
             this.tabPage2.Controls.Add(this.label_unit2);
             this.tabPage2.Controls.Add(this.label_price2);
-            this.tabPage2.Controls.Add(this.label_description2);
             this.tabPage2.Controls.Add(this.label_barcode2);
             this.tabPage2.Controls.Add(this.SearchButton);
             this.tabPage2.Controls.Add(this.ClearButton2);
@@ -373,14 +342,14 @@
             this.label_unitprice2.TabIndex = 59;
             this.label_unitprice2.Text = "Unit price";
             // 
-            // ItemBox2
+            // ItemDescriptionBox2
             // 
-            this.ItemBox2.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.ItemBox2.Location = new System.Drawing.Point(185, 78);
-            this.ItemBox2.Multiline = true;
-            this.ItemBox2.Name = "ItemBox2";
-            this.ItemBox2.Size = new System.Drawing.Size(182, 31);
-            this.ItemBox2.TabIndex = 58;
+            this.ItemDescriptionBox2.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.ItemDescriptionBox2.Location = new System.Drawing.Point(185, 96);
+            this.ItemDescriptionBox2.Multiline = true;
+            this.ItemDescriptionBox2.Name = "ItemDescriptionBox2";
+            this.ItemDescriptionBox2.Size = new System.Drawing.Size(182, 31);
+            this.ItemDescriptionBox2.TabIndex = 58;
             // 
             // label_item2
             // 
@@ -388,11 +357,11 @@
             this.label_item2.BackColor = System.Drawing.Color.Transparent;
             this.label_item2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_item2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label_item2.Location = new System.Drawing.Point(50, 82);
+            this.label_item2.Location = new System.Drawing.Point(50, 100);
             this.label_item2.Name = "label_item2";
-            this.label_item2.Size = new System.Drawing.Size(41, 20);
+            this.label_item2.Size = new System.Drawing.Size(125, 20);
             this.label_item2.TabIndex = 57;
-            this.label_item2.Text = "Item";
+            this.label_item2.Text = "Item Description";
             // 
             // label_retailprice2
             // 
@@ -439,20 +408,11 @@
             // UnitBox2
             // 
             this.UnitBox2.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.UnitBox2.Location = new System.Drawing.Point(185, 166);
+            this.UnitBox2.Location = new System.Drawing.Point(185, 157);
             this.UnitBox2.Multiline = true;
             this.UnitBox2.Name = "UnitBox2";
             this.UnitBox2.Size = new System.Drawing.Size(182, 31);
             this.UnitBox2.TabIndex = 54;
-            // 
-            // DescriptionBox2
-            // 
-            this.DescriptionBox2.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.DescriptionBox2.Location = new System.Drawing.Point(185, 124);
-            this.DescriptionBox2.Multiline = true;
-            this.DescriptionBox2.Name = "DescriptionBox2";
-            this.DescriptionBox2.Size = new System.Drawing.Size(182, 30);
-            this.DescriptionBox2.TabIndex = 52;
             // 
             // BarcodeBox2
             // 
@@ -469,7 +429,7 @@
             this.label_unit2.BackColor = System.Drawing.Color.Transparent;
             this.label_unit2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_unit2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label_unit2.Location = new System.Drawing.Point(50, 172);
+            this.label_unit2.Location = new System.Drawing.Point(50, 163);
             this.label_unit2.Name = "label_unit2";
             this.label_unit2.Size = new System.Drawing.Size(38, 20);
             this.label_unit2.TabIndex = 50;
@@ -486,18 +446,6 @@
             this.label_price2.Size = new System.Drawing.Size(44, 20);
             this.label_price2.TabIndex = 49;
             this.label_price2.Text = "Price";
-            // 
-            // label_description2
-            // 
-            this.label_description2.AutoSize = true;
-            this.label_description2.BackColor = System.Drawing.Color.Transparent;
-            this.label_description2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_description2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label_description2.Location = new System.Drawing.Point(50, 129);
-            this.label_description2.Name = "label_description2";
-            this.label_description2.Size = new System.Drawing.Size(89, 20);
-            this.label_description2.TabIndex = 47;
-            this.label_description2.Text = "Description";
             // 
             // label_barcode2
             // 
@@ -554,11 +502,9 @@
             // 
             this.tabPage3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tabPage3.BackgroundImage")));
             this.tabPage3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.tabPage3.Controls.Add(this.ItemBox3);
+            this.tabPage3.Controls.Add(this.ItemDescriptionBox3);
             this.tabPage3.Controls.Add(this.label_item3);
-            this.tabPage3.Controls.Add(this.DescriptionBox3);
             this.tabPage3.Controls.Add(this.BarcodeBox3);
-            this.tabPage3.Controls.Add(this.label_description3);
             this.tabPage3.Controls.Add(this.label_barcode3);
             this.tabPage3.Controls.Add(this.DeleteButton);
             this.tabPage3.Controls.Add(this.SearchButton2);
@@ -570,14 +516,14 @@
             this.tabPage3.Text = "Delete";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // ItemBox3
+            // ItemDescriptionBox3
             // 
-            this.ItemBox3.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.ItemBox3.Location = new System.Drawing.Point(429, 77);
-            this.ItemBox3.Multiline = true;
-            this.ItemBox3.Name = "ItemBox3";
-            this.ItemBox3.Size = new System.Drawing.Size(182, 31);
-            this.ItemBox3.TabIndex = 45;
+            this.ItemDescriptionBox3.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.ItemDescriptionBox3.Location = new System.Drawing.Point(429, 77);
+            this.ItemDescriptionBox3.Multiline = true;
+            this.ItemDescriptionBox3.Name = "ItemDescriptionBox3";
+            this.ItemDescriptionBox3.Size = new System.Drawing.Size(182, 31);
+            this.ItemDescriptionBox3.TabIndex = 45;
             // 
             // label_item3
             // 
@@ -587,18 +533,9 @@
             this.label_item3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label_item3.Location = new System.Drawing.Point(294, 81);
             this.label_item3.Name = "label_item3";
-            this.label_item3.Size = new System.Drawing.Size(41, 20);
+            this.label_item3.Size = new System.Drawing.Size(125, 20);
             this.label_item3.TabIndex = 44;
-            this.label_item3.Text = "Item";
-            // 
-            // DescriptionBox3
-            // 
-            this.DescriptionBox3.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.DescriptionBox3.Location = new System.Drawing.Point(429, 123);
-            this.DescriptionBox3.Multiline = true;
-            this.DescriptionBox3.Name = "DescriptionBox3";
-            this.DescriptionBox3.Size = new System.Drawing.Size(182, 30);
-            this.DescriptionBox3.TabIndex = 43;
+            this.label_item3.Text = "Item Description";
             // 
             // BarcodeBox3
             // 
@@ -608,18 +545,6 @@
             this.BarcodeBox3.Name = "BarcodeBox3";
             this.BarcodeBox3.Size = new System.Drawing.Size(182, 31);
             this.BarcodeBox3.TabIndex = 42;
-            // 
-            // label_description3
-            // 
-            this.label_description3.AutoSize = true;
-            this.label_description3.BackColor = System.Drawing.Color.Transparent;
-            this.label_description3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_description3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label_description3.Location = new System.Drawing.Point(294, 128);
-            this.label_description3.Name = "label_description3";
-            this.label_description3.Size = new System.Drawing.Size(89, 20);
-            this.label_description3.TabIndex = 41;
-            this.label_description3.Text = "Description";
             // 
             // label_barcode3
             // 
@@ -718,13 +643,11 @@
         private System.Windows.Forms.TabControl UpdatePage;
         private System.Windows.Forms.TabPage AddPage;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox DescriptionBox;
         private System.Windows.Forms.TextBox BarcodeBox;
         private System.Windows.Forms.Button AddButton;
         private System.Windows.Forms.Label label_unit;
         private System.Windows.Forms.Label label_price;
         private System.Windows.Forms.Label label_retailprice;
-        private System.Windows.Forms.Label label_description;
         private System.Windows.Forms.Label label_barcode;
         private System.Windows.Forms.TextBox UnitBox;
         private System.Windows.Forms.TextBox RetailPriceBox;
@@ -739,30 +662,26 @@
         private System.Windows.Forms.Button SearchButton;
         private System.Windows.Forms.Button ClearButton2;
         private System.Windows.Forms.Button UpdateButton;
-        private System.Windows.Forms.TextBox ItemBox;
+        private System.Windows.Forms.TextBox ItemDescriptionBox;
         private System.Windows.Forms.Label label_item;
         private System.Windows.Forms.TextBox UnitPriceBox;
         private System.Windows.Forms.Label label_unitprice;
         private System.Windows.Forms.TextBox UnitPriceBox2;
         private System.Windows.Forms.Label label_unitprice2;
-        private System.Windows.Forms.TextBox ItemBox2;
+        private System.Windows.Forms.TextBox ItemDescriptionBox2;
         private System.Windows.Forms.Label label_item2;
         private System.Windows.Forms.Label label_retailprice2;
         private System.Windows.Forms.TextBox RetailPriceBox2;
         private System.Windows.Forms.TextBox QuantityBox2;
         private System.Windows.Forms.Label label_quantity2;
         private System.Windows.Forms.TextBox UnitBox2;
-        private System.Windows.Forms.TextBox DescriptionBox2;
         private System.Windows.Forms.TextBox BarcodeBox2;
         private System.Windows.Forms.Label label_unit2;
         private System.Windows.Forms.Label label_price2;
-        private System.Windows.Forms.Label label_description2;
         private System.Windows.Forms.Label label_barcode2;
-        private System.Windows.Forms.TextBox ItemBox3;
+        private System.Windows.Forms.TextBox ItemDescriptionBox3;
         private System.Windows.Forms.Label label_item3;
-        private System.Windows.Forms.TextBox DescriptionBox3;
         private System.Windows.Forms.TextBox BarcodeBox3;
-        private System.Windows.Forms.Label label_description3;
         private System.Windows.Forms.Label label_barcode3;
     }
 }

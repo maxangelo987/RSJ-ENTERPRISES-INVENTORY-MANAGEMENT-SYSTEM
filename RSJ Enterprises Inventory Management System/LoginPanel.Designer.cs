@@ -171,7 +171,7 @@
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "LoginPanel";
-      //      this.Load += new System.EventHandler(this.LoginPanel_Load);
+            this.Load += new System.EventHandler(this.LoginPanel_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();

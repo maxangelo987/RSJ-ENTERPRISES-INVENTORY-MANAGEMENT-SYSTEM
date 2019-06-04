@@ -14,6 +14,11 @@ namespace Inventory_Management_System
 {
     public partial class Admins : Form
     {
+
+        string productaddress = "C:/Users/user/OneDrive/Work and Jobs ᜵ ᜄᜏ ᜀᜆ᜔ ᜋᜅ ᜄᜏᜁᜈ᜔/Logiclude/RSJ-Enterprises-Inventory-Management-System/Confidential/RSJEIMS/Product/";
+        string useraddress = "C:/Users/user/OneDrive/Work and Jobs ᜵ ᜄᜏ ᜀᜆ᜔ ᜋᜅ ᜄᜏᜁᜈ᜔/Logiclude/RSJ-Enterprises-Inventory-Management-System/Confidential/RSJEIMS/User/";
+        string adminaddress = "C:/Users/user/OneDrive/Work and Jobs ᜵ ᜄᜏ ᜀᜆ᜔ ᜋᜅ ᜄᜏᜁᜈ᜔/Logiclude/RSJ-Enterprises-Inventory-Management-System/Confidential/RSJEIMS/Admin/";
+
         public Admins()
         {
             InitializeComponent();
@@ -159,13 +164,13 @@ namespace Inventory_Management_System
          
 
            
-            if (!Directory.Exists("C:/Confidential/GESMIS/Teacher/"))
+            if (!Directory.Exists(adminaddress))
             {
-                Directory.CreateDirectory("C:/Confidential/GESMIS/Teacher/");
+                Directory.CreateDirectory(adminaddress);
             }
             try
             {
-                if (File.Exists("C:/Confidential/GESMIS/Teacher/" + tc.Username))
+                if (File.Exists(adminaddress + tc.Username))
                 {
                     MessageBox.Show("This Id  Is Already Exist...Sorry");
                 }
@@ -176,7 +181,7 @@ namespace Inventory_Management_System
                 else
                 {
 
-                    FileStream fs = new FileStream("C:/Confidential/GESMIS/Teacher/" + tc.Username, FileMode.OpenOrCreate, FileAccess.ReadWrite);
+                    FileStream fs = new FileStream(adminaddress + tc.Username, FileMode.OpenOrCreate, FileAccess.ReadWrite);
                     BinaryFormatter b = new BinaryFormatter();
                     b.Serialize(fs, tc);
                     fs.Close();
@@ -201,7 +206,7 @@ namespace Inventory_Management_System
 
         private void button4_Click(object sender, EventArgs e)
         {
-            if (!File.Exists("C:/Confidential/GESMIS/Teacher/" + TeacherUsername2.Text))
+            if (!File.Exists(adminaddress + TeacherUsername2.Text))
             {
                 MessageBox.Show("Sorry Invalid Id...!!!");
             }
@@ -210,7 +215,7 @@ namespace Inventory_Management_System
             {
                 try
                 {
-                    FileStream fs = new FileStream("C:/Confidential/GESMIS/Teacher/" + TeacherUsername2.Text, FileMode.OpenOrCreate, FileAccess.ReadWrite);
+                    FileStream fs = new FileStream(adminaddress+ TeacherUsername2.Text, FileMode.OpenOrCreate, FileAccess.ReadWrite);
                     BinaryFormatter b = new BinaryFormatter();
                     tc = (TeacherData)b.Deserialize(fs);
                     fs.Close();
@@ -235,7 +240,7 @@ namespace Inventory_Management_System
         
             try
             {
-                FileStream fs = new FileStream("C:/Confidential/GESMIS/Teacher/" + TeacherUsername2.Text, FileMode.OpenOrCreate, FileAccess.ReadWrite);
+                FileStream fs = new FileStream(adminaddress + TeacherUsername2.Text, FileMode.OpenOrCreate, FileAccess.ReadWrite);
                 BinaryFormatter b = new BinaryFormatter();
                 b.Serialize(fs, tc);
                 fs.Close();
@@ -261,7 +266,7 @@ namespace Inventory_Management_System
 
         private void button9_Click(object sender, EventArgs e)
         {
-            if (!File.Exists("C:/Confidential/GESMIS/Teacher/" + Teacher_Username.Text))
+            if (!File.Exists(adminaddress + Teacher_Username.Text))
             {
                 MessageBox.Show("Sorry Invalid Id...!!!");
                 button8.PerformClick();
@@ -270,7 +275,7 @@ namespace Inventory_Management_System
             {
                 try
                 {
-                    FileStream fs = new FileStream("C:/Confidential/GESMIS/Teacher/" + Teacher_Username.Text, FileMode.OpenOrCreate, FileAccess.ReadWrite);
+                    FileStream fs = new FileStream(adminaddress + Teacher_Username.Text, FileMode.OpenOrCreate, FileAccess.ReadWrite);
                     BinaryFormatter b = new BinaryFormatter();
                     tc = (TeacherData)b.Deserialize(fs);
                     fs.Close();
@@ -303,7 +308,7 @@ namespace Inventory_Management_System
         {
             try
             {
-                File.Delete("C:/Confidential/GESMIS/Teacher/" + Teacher_Username.Text);
+                File.Delete(adminaddress + Teacher_Username.Text);
                 MessageBox.Show("Trainer Record Has Been Deleted From Our Database");
                 button8.PerformClick();
             }
