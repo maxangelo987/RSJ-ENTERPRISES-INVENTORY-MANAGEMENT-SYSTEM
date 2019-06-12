@@ -127,7 +127,7 @@
             this.button2.BackColor = System.Drawing.Color.Black;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.HotPink;
-            this.button2.Location = new System.Drawing.Point(467, 213);
+            this.button2.Location = new System.Drawing.Point(484, 213);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(132, 36);
             this.button2.TabIndex = 86;
@@ -159,7 +159,7 @@
             this.button3.BackColor = System.Drawing.Color.Black;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.HotPink;
-            this.button3.Location = new System.Drawing.Point(329, 213);
+            this.button3.Location = new System.Drawing.Point(335, 213);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(132, 36);
             this.button3.TabIndex = 76;

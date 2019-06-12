@@ -63,6 +63,9 @@
     <ApplicationIcon>RSJ Ico.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -75,12 +78,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Grade.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Grade.Designer.cs">
-      <DependentUpon>Grade.cs</DependentUpon>
-    </Compile>
+    <Compile Include="CreateExcelDoc.cs" />
     <Compile Include="LoginPanel.cs">
       <SubType>Form</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -124,23 +122,12 @@
     <Compile Include="ViewRecordsTeacher.Designer.cs">
       <DependentUpon>ViewRecordsTeacher.cs</DependentUpon>
     </Compile>
-    <Compile Include="WelcomeHD.cs">
-      <SubType>Form</SubType>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Compile>
-    <Compile Include="WelcomeHD.Designer.cs">
-      <DependentUpon>WelcomeHD.cs</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Compile>
     <Compile Include="WelcomeO.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="WelcomeO.Designer.cs">
       <DependentUpon>WelcomeO.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Grade.resx">
-      <DependentUpon>Grade.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="LoginPanel.fil.resx">
       <DependentUpon>LoginPanel.cs</DependentUpon>
     </EmbeddedResource>
@@ -172,10 +159,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ViewRecordsTeacher.resx">
       <DependentUpon>ViewRecordsTeacher.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="WelcomeHD.resx">
-      <DependentUpon>WelcomeHD.cs</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="WelcomeO.resx">
       <DependentUpon>WelcomeO.cs</DependentUpon>

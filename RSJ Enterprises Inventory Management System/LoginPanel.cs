@@ -97,23 +97,11 @@ namespace Inventory_Management_System
                     {
                         process();
 
-                        if (tc.Teachingfield == "Head Teacher")
-                        {
-                            WelcomeHD wc = new WelcomeHD();
-                            this.Hide();
-                            wc.Show();
-                            textBox1.Text = "";
-                            textBox1.Text = "";
-                        }
-
-                        else
-                        {
                             WelcomeO wc = new WelcomeO();
                             this.Hide();
                             wc.Show();
                             textBox1.Text = "";
                             textBox1.Text = "";
-                        }
 
                     }
                     else

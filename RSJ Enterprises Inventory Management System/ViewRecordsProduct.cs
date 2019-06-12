@@ -11,6 +11,9 @@ using System.Data.Sql;
 using System.Data.SqlClient;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+using Excel = Microsoft.Office.Interop.Excel;
+
+using System.Runtime.InteropServices;
 
 namespace Inventory_Management_System
 {
@@ -39,10 +42,9 @@ namespace Inventory_Management_System
         UserData ut;
         private void ViewRecords_Load(object sender, EventArgs e)
         {
-
-
+       // 
             ut = new UserData();
-           
+        
             try
             {
                     FileStream fs = new FileStream(useraddress + "USER", FileMode.OpenOrCreate, FileAccess.ReadWrite);
@@ -57,10 +59,16 @@ namespace Inventory_Management_System
             }
 
 
+            ///
+            ExcelExample.logic.CreateExcelDoc excell_app = new ExcelExample.logic.CreateExcelDoc();
+            ///
+
+            excell_app.createHeaders(1, 1, "Barcode", "A1", "B1", 2, "YELLOW", true, 10, "n");
+            excell_app.createHeaders(1, 3, "Item Description", "C1", "D1", 2, "YELLOW", true, 10, "n");
             string barc = ut.barcode;
-
-
+        
             string[] split = barc.Split(new Char[] { ' ' });
+            int  i = 2;
             foreach (string s in split)
             {
                 if (s.Trim() != "") 
@@ -73,7 +81,10 @@ namespace Inventory_Management_System
                         fs.Close();
 
                         string[] row0 = { st.barcode, st.itemdescription, st.unit, st.quantity.ToString(), st.unitprice.ToString(), st.retailprice.ToString()};
+                  
+                        excell_app.createHeaders(i, 1, st.barcode.ToString(), "A" + i.ToString(), "B" + i.ToString(), 0, "GRAY", true, 10, "");
                         dataGridView1.Rows.Add(row0);
+                        i++;
                     }
                 }
             }

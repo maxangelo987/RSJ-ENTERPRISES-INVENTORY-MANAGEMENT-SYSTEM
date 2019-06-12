@@ -158,20 +158,6 @@ namespace Inventory_Management_System
             lp.Show();
         }
 
-        private void label7_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox5_Click(object sender, EventArgs e)
-        {
-            Grade lp = new Grade();
-            lp.Show();
-        }
     }
 }
